@@ -263,14 +263,14 @@ http.open(<span class="hljs-string">&apos;GET&apos;</span>, url, <span class="hl
 http.setRequestHeader(<span class="hljs-string">&apos;Content-type&apos;</span>, <span class="hljs-string">&apos;text/plain&apos;</span>);
 
 http.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-comment">//Call a function when the state changes.</span>
-    <span class="hljs-keyword">if</span>(http.readyState == <span class="hljs-number">4</span> &amp;&amp; http.status == <span class="hljs-number">200</span>) {
-        alert(http.responseText);
-    }
+  <span class="hljs-keyword">if</span>(http.readyState == <span class="hljs-number">4</span> &amp;&amp; http.status == <span class="hljs-number">200</span>) {
+    alert(http.responseText);
+  }
 }
 http.send(params);
 </code></pre>
 <blockquote>
-<p>&#xC774;&#xAC83;&#xC774; &#xBC14;&#xB85C; &#xBC31;&#xC5D4;&#xB4DC;&#xC640; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xD1B5;&#xC2E0;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;</p>
+<p>&#xC120;&#xC0DD;&#xB2D8;&#x1F468;&#x200D;&#x1F3EB;: &#xC774;&#xAC83;&#xC774; &#xBC14;&#xB85C; &#xBC31;&#xC5D4;&#xB4DC;&#xC640; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xD1B5;&#xC2E0;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;</p>
 </blockquote>
 <p><strong><a href="#table-of-contents">&#x2B06; back to top</a></strong></p>
 <h2 id="http-method">HTTP method</h2>
@@ -308,7 +308,7 @@ http.send(params);
 <li>&#xC6B4;&#xC601; &#xCCB4;&#xC81C;&#xB098; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB9CC;&#xB4E0; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</li>
 </ul>
 <blockquote>
-<p>&#xB208;&#xB192;&#xC774; &#xC124;&#xBA85;!<br>&#xC5D0;&#xB514;&#xD130; &#xD574;&#xBC00;&#xC758; &#xC124;&#xBA85;: &#xC800;&#xB294; API&#xB77C;&#xB294; &#xC6A9;&#xC5B4;&#xB97C; &#xC57D;&#xC18D;&#xC774;&#xB77C;&#xACE0; &#xC774;&#xD574;&#xD588;&#xC5B4;&#xC694;! &#xD504;&#xB860;&#xD2B8; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xBC31;&#xC5D4;&#xB4DC; &#xAC1C;&#xBC1C;&#xC790;&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD558;&#xB294; API!</p>
+<p>&#xD559;&#xC2B5;&#xC790; &#xD574;&#xBC00;&#xC758; &#x1F440;&#xB208;&#xB192;&#xC774;&#xC124;&#xBA85;: &#xC800;&#xB294; API&#xB77C;&#xB294; &#xC6A9;&#xC5B4;&#xB97C; &#xC57D;&#xC18D;&#xC774;&#xB77C;&#xACE0; &#xC774;&#xD574;&#xD588;&#xC5B4;&#xC694;! &#xD504;&#xB860;&#xD2B8;&#xC5D4;&#xB4DC; &#xAC1C;&#xBC1C;&#xC790;&#xC640; &#xBC31;&#xC5D4;&#xB4DC; &#xAC1C;&#xBC1C;&#xC790; &#xD611;&#xC5C5;&#xD560; &#xB54C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC8FC;&#xACE0; &#xBC1B;&#xAE30; &#xC704;&#xD55C; &#xC57D;&#xC18D; &#xB610;&#xD55C; API&#xAC00; &#xC544;&#xB2D0;&#xAE4C;&#xC694;?!</p>
 </blockquote>
 <h2 id="restfull-api">RESTFULL API</h2>
 <ul>
@@ -363,7 +363,7 @@ http.send(params);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"REST API","level":"1.4","depth":1,"next":{"title":"Blocking","level":"1.5","depth":1,"path":"contents/3.Blocking.md","ref":"./contents/3.Blocking.md","articles":[]},"previous":{"title":"서버의 기초","level":"1.3","depth":1,"path":"contents/1.what-is-the-server.md","ref":"./contents/1.what-is-the-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/2.REST-API.md","mtime":"2020-06-06T10:27:19.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T12:44:03.572Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"REST API","level":"1.4","depth":1,"next":{"title":"Blocking","level":"1.5","depth":1,"path":"contents/3.Blocking.md","ref":"./contents/3.Blocking.md","articles":[]},"previous":{"title":"서버의 기초","level":"1.3","depth":1,"path":"contents/1.what-is-the-server.md","ref":"./contents/1.what-is-the-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/2.REST-API.md","mtime":"2020-06-06T12:56:14.467Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T12:56:24.147Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
