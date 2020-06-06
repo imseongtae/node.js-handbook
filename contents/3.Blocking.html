@@ -209,7 +209,6 @@
 <li><a href="#&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;-&#xB514;&#xC790;&#xC778;-&#xD328;&#xD134;-post">&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; POST</a></li>
 <li><a href="#&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;-&#xB514;&#xC790;&#xC778;-&#xD328;&#xD134;-put">&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; PUT</a></li>
 <li><a href="#&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;-&#xB514;&#xC790;&#xC778;-&#xD328;&#xD134;-delete">&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; DELETE</a></li>
-<li><a href="#practice">Practice</a></li>
 </ol>
 <hr>
 <h2 id="&#xBE14;&#xB85C;&#xD0B9;">&#xBE14;&#xB85C;&#xD0B9;</h2>
@@ -434,10 +433,164 @@ pool.getConnection(<span class="hljs-keyword">async</span> <span class="hljs-fun
   })        
 };
 </code></pre>
+<blockquote>
+<p>&#xC704;&#xC640; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD558;&#xBA74; &#xC774;&#xC81C; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; query&#xB97C; &#xAD00;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;!<br>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; routes&#xC758; school.js &#xC758; get &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xBC14;&#xAFD4;&#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-js">router.get(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-keyword">const</span> schoolName = req.query.schoolName
+  <span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> school.getList({schoolName:schoolName})
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;success&apos;</span>)
+  res.status(<span class="hljs-number">200</span>).json({result:results})            
+})
+</code></pre>
 <h2 id="&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;-&#xB514;&#xC790;&#xC778;-&#xD328;&#xD134;-post">&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; POST</h2>
+<ul>
+<li>&#xADF8;&#xB9AC;&#xACE0; post&#xB3C4; &#xC0C1;&#xB2F9;&#xD788; &#xB2E4;&#xB974;&#xAC8C; &#xBCC0;&#xACBD;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>POST, UPDATE, DELETE&#xC758; &#xACBD;&#xC6B0; &#xC6B0;&#xB9AC;&#xB294; rollback&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, beginTransaction&#xC73C;&#xB85C; &#xCF54;&#xB4DC;&#xB97C; &#xC2DC;&#xC791;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xADF8;&#xB798;&#xC11C; db.js&#xC5D0; &#xC544;&#xB798; &#xCF54;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.beginTransaction = () =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+    pool.getConnection(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, connection</span>) </span>{
+      <span class="hljs-keyword">if</span> (err) reject(err); <span class="hljs-comment">// not connected!</span>
+        <span class="hljs-comment">// Use the connection</span>
+      connection.beginTransaction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-keyword">if</span> (err) { reject(err); }
+        resolve(connection)
+      });
+    });
+  })
+}
+</code></pre>
+<blockquote>
+<p>&#xB610;&#xD55C; commit&#xACFC; rollback&#xB3C4; &#xAD6C;&#xD604; &#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.commit = connection =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+        connection.commit(err =&gt; {
+            <span class="hljs-keyword">if</span> (err) reject(<span class="hljs-keyword">this</span>.rollback(connection));
+            <span class="hljs-keyword">else</span> {
+                connection.release();
+                resolve();
+            }
+        });
+    });
+};
+
+<span class="hljs-built_in">module</span>.exports.rollback = connection =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+        connection.rollback(err =&gt; {
+            <span class="hljs-keyword">if</span> (err) reject(err);
+            <span class="hljs-keyword">else</span> {
+                connection.release();
+                resolve();
+            }
+        });
+    });
+};
+</code></pre>
+<blockquote>
+<p>routes/school.js&#xC758; post &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-js">router.post(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> json = req.body;
+        <span class="hljs-keyword">const</span> connection = <span class="hljs-keyword">await</span> db.beginTransaction();
+        <span class="hljs-keyword">var</span> newSchool = { name: json.name, address: json.address, type: json.type };
+        <span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> school.insert(connection, newSchool);
+        <span class="hljs-keyword">await</span> db.commit(connection);
+        <span class="hljs-keyword">if</span> (results) {
+            res.status(<span class="hljs-number">200</span>).json({ result: results.insertId });
+        }
+    } <span class="hljs-keyword">catch</span> (err) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;err : &apos;</span>, err);
+        <span class="hljs-keyword">await</span> db.rollback(connection);
+        next(err);
+    }
+});
+</code></pre>
+<ul>
+<li>try...catch&#xC5D0;&#xC11C; catch&#xB294; throw err&#xAC00; &#xC77C;&#xC5B4;&#xB0AC;&#xC744; &#xC2DC;(&#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xC2DC;&#xC5D0;), &#xC2E4;&#xD589;&#xD558;&#xB294; &#xCF54;&#xB4DC; &#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC774;&#xB54C; &#xC6B0;&#xB9AC;&#xB294; rollback&#xC744; &#xC2E4;&#xD589;&#xD574; &#xC8FC;&#xBA70; next &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>next&#xB294; &#xB2E4;&#xC74C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4;&#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xB294; &#xD568;&#xC218;&#xB85C;, &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xC2DC; &#xB2E4;&#xC74C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xC5EC; &#xB118;&#xC5B4;&#xAC11;&#xB2C8;&#xB2E4;.</li>
+<li>&#xADF8;&#xB9AC;&#xACE0; insert &#xCF54;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC544;&#xB984;&#xB2F5;&#xAC8C; &#xBCC0;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.insert = <span class="hljs-keyword">async</span> (connection, options) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;options : &apos;</span>, options);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> db.query({
+        connection: connection,
+        query: <span class="hljs-string">&apos;INSERT INTO schools SET ?&apos;</span>,
+        value: options,
+    });
+};
+</code></pre>
 <h2 id="&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;-&#xB514;&#xC790;&#xC778;-&#xD328;&#xD134;-put">&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; PUT</h2>
+<blockquote>
+<p>put&#xC740; &#xC774;&#xC81C; &#xC544;&#xC8FC; &#xC190;&#xC27D;&#xAC8C; &#xACE0;&#xCE60; &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-comment">// routes/school.js</span>
+router.put(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> json = req.body;
+        <span class="hljs-keyword">const</span> connection = <span class="hljs-keyword">await</span> db.beginTransaction();
+        <span class="hljs-keyword">var</span> newSchool = { name: json.name, address: json.address, type: json.type };
+        <span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> school.update(connection, {
+            options: newSchool,
+            idx: json.idx,
+        });
+        <span class="hljs-keyword">await</span> db.commit(connection);
+        <span class="hljs-keyword">if</span> (results) {
+            res.status(<span class="hljs-number">200</span>).json({ result: results });
+        }
+    } <span class="hljs-keyword">catch</span> (err) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;err : &apos;</span>, err);
+        <span class="hljs-keyword">await</span> db.rollback(connection);
+        next(err);
+    }
+});
+
+<span class="hljs-comment">//models/shool.js</span>
+<span class="hljs-built_in">module</span>.exports.update = <span class="hljs-keyword">async</span> (connection, options) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;options : &apos;</span>, options);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> db.query({
+        connection: connection,
+        query: <span class="hljs-string">&apos;UPDATE schools SET ? WHERE idx = ?&apos;</span>,
+        value: [options.options, options.idx],
+    });
+};
+</code></pre>
 <h2 id="&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;-&#xB514;&#xC790;&#xC778;-&#xD328;&#xD134;-delete">&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; DELETE</h2>
-<h2 id="practice">Practice</h2>
+<blockquote>
+<p>delete &#xC5ED;&#xC2DC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0; &#xC785;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-comment">// routes/school.js</span>
+router.delete(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+    <span class="hljs-keyword">const</span> json = req.body;
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> json = req.body;
+        <span class="hljs-keyword">const</span> connection = <span class="hljs-keyword">await</span> db.beginTransaction();
+        <span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> school.delete(connection, json.idx);
+        <span class="hljs-keyword">await</span> db.commit(connection);
+        <span class="hljs-keyword">if</span> (results) {
+            res.status(<span class="hljs-number">200</span>).json({ result: results });
+        }
+    } <span class="hljs-keyword">catch</span> (err) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;err : &apos;</span>, err);
+        <span class="hljs-keyword">await</span> db.rollback(connection);
+        next(err);
+    }
+});
+
+<span class="hljs-comment">//models/shool.js</span>
+<span class="hljs-built_in">module</span>.exports.delete = <span class="hljs-keyword">async</span> (connection, options) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;options : &apos;</span>, options);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> db.query({
+        connection: connection,
+        query: <span class="hljs-string">&apos;DELETE FROM schools WHERE idx = ?&apos;</span>,
+        value: [options],
+    });
+};
+</code></pre>
 
                                 
                                 </section>
@@ -477,7 +630,7 @@ pool.getConnection(<span class="hljs-keyword">async</span> <span class="hljs-fun
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Blocking","level":"1.5","depth":1,"previous":{"title":"REST API","level":"1.4","depth":1,"path":"contents/2.REST-API.md","ref":"./contents/2.REST-API.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/3.Blocking.md","mtime":"2020-06-06T12:13:39.671Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T12:31:43.762Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Blocking","level":"1.5","depth":1,"previous":{"title":"REST API","level":"1.4","depth":1,"path":"contents/2.REST-API.md","ref":"./contents/2.REST-API.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/3.Blocking.md","mtime":"2020-06-06T12:41:05.956Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T12:41:21.066Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
