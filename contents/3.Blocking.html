@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>NonBlocking · GitBook</title>
+        <title>Blocking · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.what-is-the-server.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="2.REST-API.html" />
     
 
     </head>
@@ -102,7 +100,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="NonBlocking.html">
+        <li class="chapter " data-level="1.2" data-path="NonBlocking.html">
             
                 <a href="NonBlocking.html">
             
@@ -141,7 +139,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="3.Blocking.html">
+        <li class="chapter active" data-level="1.5" data-path="3.Blocking.html">
             
                 <a href="3.Blocking.html">
             
@@ -184,7 +182,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >NonBlocking</a>
+        <a href=".." >Blocking</a>
     </h1>
 </div>
 
@@ -199,7 +197,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="nonblocking">NonBlocking</h1>
+                                <h1 id="blocking">Blocking</h1>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ol>
+<li><a href="#&#xBE14;&#xB85C;&#xD0B9;">&#xBE14;&#xB85C;&#xD0B9;</a></li>
+<li><a href="#&#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB780;?">&#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB780;?</a></li>
+<li><a href="#arrow-function">Arrow Function</a></li>
+<li><a href="#http-method">HTTP method</a></li>
+<li><a href="#get">GET</a></li>
+<li><a href="#post">POST</a></li>
+<li><a href="#put">PUT</a></li>
+<li><a href="#delete">DELETE &#xBA54;&#xC18C;&#xB4DC;</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#restfull-api">RESTFULL API</a></li>
+</ol>
+<hr>
+<p>arrow_function
+Welcome_To_Callback_Hell
+Promise
+&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; GET
+&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; POST
+&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; PUT
+&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; DELETE
+Practice</p>
 
                                 
                                 </section>
@@ -227,14 +247,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="2.REST-API.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: REST API">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="1.what-is-the-server.html" class="navigation navigation-next " aria-label="Next page: 서버의 기초">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -243,7 +259,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NonBlocking","level":"1.2","depth":1,"next":{"title":"서버의 기초","level":"1.3","depth":1,"path":"contents/1.what-is-the-server.md","ref":"./contents/1.what-is-the-server.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/NonBlocking.md","mtime":"2020-06-06T02:46:01.043Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T11:28:15.111Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Blocking","level":"1.5","depth":1,"previous":{"title":"REST API","level":"1.4","depth":1,"path":"contents/2.REST-API.md","ref":"./contents/2.REST-API.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/3.Blocking.md","mtime":"2020-06-06T11:27:29.985Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T11:28:15.111Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
