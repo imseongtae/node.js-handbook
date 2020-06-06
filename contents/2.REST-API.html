@@ -185,6 +185,82 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="rest-api">REST API</h1>
+<ol>
+<li><a href="#CRUD">CRUD</a></li>
+<li><a href="#&#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC138;&#xACC4;">&#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC138;&#xACC4;</a></li>
+<li><a href="#NodejS-&#xC11C;&#xBC84;">NodejS &#xC11C;&#xBC84;</a></li>
+<li><a href="#&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;">&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</a></li>
+<li><a href="#&#xBC31;&#xC5D4;&#xB4DC;&#xC640;-&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;">&#xBC31;&#xC5D4;&#xB4DC;&#xC640; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;</a></li>
+<li><a href="#HTTP-method">HTTP method</a></li>
+<li><a href="#GET">GET</a></li>
+<li><a href="#POST">POST</a></li>
+<li><a href="#PUT">PUT</a></li>
+<li><a href="#DELETE">DELETE</a></li>
+<li><a href="#API">API</a></li>
+<li><a href="#RESTFULL-API">RESTFULL API</a></li>
+</ol>
+<h2 id="crud">CRUD</h2>
+<ul>
+<li>&#xC11C;&#xBC84;&#xB97C; &#xB9CC;&#xB4E4; &#xB54C;&#xC5D0; &#xAF2D; &#xB530;&#xB77C;&#xC57C; &#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC740; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB2E4;&#xB9CC; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xC758; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xB370;&#xC774;&#xD130; &#xCC98;&#xB9AC; &#xBC29;&#xC2DD;&#xC778; CRUD&#xC5D0; &#xB530;&#xB77C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC774; &#xC77C;&#xBC18;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC5EC;&#xAE30;&#xC11C; CRUD&#xB294; Create, Read, Update, Delete&#xB97C; &#xC758;&#xBBF8; &#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;">&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</h2>
+<ul>
+<li>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB780; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xB450; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xC811;&#xC811;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC27D;&#xAC8C; &#xB9D0;&#xD574;&#xC11C;, &#xC6B0;&#xB9AC;&#xAC00; &#xB2E4;&#xB978; &#xC7A5;&#xCE58;&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAC83;&#xC774;&#xB77C;&#xACE0; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD0C0;&#xC790;&#xB97C; &#xCE60; &#xB54C; &#xB204;&#xB974;&#xB294; &#xD0A4;&#xBCF4;&#xB4DC;&#xC758; &#xD0A4;&#xB4E4;&#xC740; &#xCEF4;&#xD4E8;&#xD130;&#xC5D0;&#xAC8C; &#xBA85;&#xB839;&#xC744; &#xB0B4;&#xB9AC;&#xAE30; &#xC704;&#xD55C; &#xC77C;&#xC885;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD2B9;&#xC815; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xC758; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xB0B4;&#xBD80;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xB3D9;&#xC791; &#xC2DC;&#xD0A4;&#xAE30; &#xC704;&#xD574; &#xB9CC;&#xB4E4;&#xC5B4; &#xB193;&#xC740; &#xC77C;&#xC885;&#xC758; &#xD1B5;&#xB85C;&#xB77C;&#xACE0; &#xC774;&#xD574;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD504;&#xB860;&#xD2B8;&#xC5D4;&#xB4DC; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xC11C;&#xBC84; &#xB0B4;&#xBD80;&#xB97C; &#xC870;&#xC885;&#xD560; &#xBC29;&#xBC95;&#xC774; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;(&#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD574;&#xC11C;&#xB294; &#xC548;&#xB429;&#xB2C8;&#xB2E4;!), &#xC11C;&#xBC84; &#xAC1C;&#xBC1C;&#xC790;&#xB294; &#xD504;&#xB860;&#xD2B8;&#xC5D4;&#xB4DC; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xC11C;&#xBC84;&#xC758; &#xC790;&#xC6D0;&#xC744; &#xD560;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.   </li>
+</ul>
+<h2 id="&#xBC31;&#xC5D4;&#xB4DC;&#xC640;-&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;">&#xBC31;&#xC5D4;&#xB4DC;&#xC640; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;</h2>
+<ul>
+<li>&#xC774;&#xC804;&#xC5D0; &#xB9CC;&#xB4E0; &#xC11C;&#xBC84;&#xC5D0; &#xD328;&#xC2A4;&#xB124;&#xC784;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;url&apos;</span>).parse(req.url, <span class="hljs-literal">true</span>);
+<span class="hljs-keyword">if</span>(url.pathname === <span class="hljs-string">&apos;/sub&apos;</span>) {
+    res.statusCode = <span class="hljs-number">200</span>;
+    res.setHeader(<span class="hljs-string">&quot;Access-Control-Allow-Origin&quot;</span>, <span class="hljs-string">&quot;*&quot;</span>);
+    res.setHeader(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;text/plain&apos;</span>);
+    res.write(<span class="hljs-string">&apos;sub&apos;</span>);
+    res.end();
+}<span class="hljs-keyword">else</span> {
+    res.statusCode = <span class="hljs-number">200</span>;
+    res.setHeader(<span class="hljs-string">&quot;Access-Control-Allow-Origin&quot;</span>, <span class="hljs-string">&quot;*&quot;</span>);
+    res.setHeader(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;text/plain&apos;</span>);
+    res.end(<span class="hljs-string">&apos;Hello World\n&apos;</span>);
+}
+</code></pre>
+<ul>
+<li>url&#xB85C; &#xC804;&#xB2EC; &#xBC1B;&#xB294; path&#xC758; &#xACBD;&#xB85C;&#xB97C; &#xCCB4;&#xD06C;&#xD558;&#xC5EC; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC751;&#xB2F5;&#xD558;&#xB294; &#xC815;&#xBCF4;&#xB97C; &#xB2E4;&#xB974;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC704;&#xC640; &#xAC19;&#xC774;, &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC758; &#xB9AC;&#xD018;&#xC2A4;&#xD2B8;&#xB97C; &#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;&#xD558;&#xB294; &#xACBD;&#xB85C;(&#xC5D4;&#xB4DC;&#xD3EC;&#xC778;&#xD2B8;)&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB974;&#xAC8C; &#xD578;&#xB4E4;&#xB9C1; &#xD558;&#xB294; &#xAC83;&#xC744; &#xB77C;&#xC6B0;&#xD305;&#xC774;&#xB77C;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC774;&#xC81C; &#xC6B0;&#xB9AC;&#xAC00; &#xB9CC;&#xB4E0; &#xC11C;&#xBC84;&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xBCF4;&#xAE30; &#xC704;&#xD55C; &#xAC04;&#xB2E8;&#xD55C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC571;&#xC744; &#xB9CC;&#xB4E4;&#xC5B4; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> http = <span class="hljs-keyword">new</span> XMLHttpRequest();
+<span class="hljs-keyword">var</span> url = <span class="hljs-string">&apos;http://127.0.0.1:3000/sub&apos;</span>;
+<span class="hljs-keyword">var</span> params = <span class="hljs-string">&apos;&apos;</span>;
+http.open(<span class="hljs-string">&apos;GET&apos;</span>, url, <span class="hljs-literal">true</span>);
+
+<span class="hljs-comment">//Send the proper header information along with the request</span>
+http.setRequestHeader(<span class="hljs-string">&apos;Content-type&apos;</span>, <span class="hljs-string">&apos;text/plain&apos;</span>);
+
+http.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-comment">//Call a function when the state changes.</span>
+    <span class="hljs-keyword">if</span>(http.readyState == <span class="hljs-number">4</span> &amp;&amp; http.status == <span class="hljs-number">200</span>) {
+        alert(http.responseText);
+    }
+}
+http.send(params);
+</code></pre>
+<blockquote>
+<p>&#xC774;&#xAC83;&#xC774; &#xBC14;&#xB85C; &#xBC31;&#xC5D4;&#xB4DC;&#xC640; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xD1B5;&#xC2E0;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;</p>
+</blockquote>
+<h2 id="httpmethod">HTTP_method</h2>
+<ul>
+<li>HTTP &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC740; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC758; &#xC694;&#xCCAD;&#xC744; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xB294; &#xC694;&#xCCAD; &#xBA54;&#xC18C;&#xB4DC;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xC9D1;&#xD569;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC5EC;&#xB7EC; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC788;&#xC9C0;&#xB9CC;, &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xAC00;&#xC7A5; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294; GET, POST, PUT, DELETE &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xAC01; &#xBA54;&#xC18C;&#xB4DC;&#xB4E4;&#xC740; &#xBB3C;&#xB860;, &#xC57D;&#xC18D;&#xD55C; &#xBC29;&#xBC95;&#xACFC; &#xB2E4;&#xB974;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB2E4;&#xB9CC; &#xD611;&#xC5C5;&#xACFC; &#xC2E4;&#xC218;&#xB97C; &#xC904;&#xC774;&#xAE30; &#xC704;&#xD574;, &#xC57D;&#xC18D;&#xB41C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xAC1C;&#xBC1C;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xB4DC;&#xB9BD;&#xB2C8;&#xB2E4;.</li>
+</ul>
 
                                 
                                 </section>
@@ -224,7 +300,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"REST API","level":"1.4","depth":1,"previous":{"title":"서버의 기초","level":"1.3","depth":1,"path":"contents/1.what-is-the-server.md","ref":"./contents/1.what-is-the-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/2.REST-API.md","mtime":"2020-06-06T09:35:22.752Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T09:37:08.612Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"REST API","level":"1.4","depth":1,"previous":{"title":"서버의 기초","level":"1.3","depth":1,"path":"contents/1.what-is-the-server.md","ref":"./contents/1.what-is-the-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/2.REST-API.md","mtime":"2020-06-06T09:50:15.931Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T09:50:29.419Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
