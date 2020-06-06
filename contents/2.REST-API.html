@@ -187,23 +187,20 @@
                                 <h1 id="rest-api">REST API</h1>
 <h2 id="table-of-contents">Table Of Contents</h2>
 <ol>
-<li><a href="#CRUD-&#x1F58D;&#xFE0F;">CRUD &#x1F58D;&#xFE0F;</a></li>
+<li><a href="#CRUD">CRUD</a></li>
 <li><a href="#&#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC138;&#xACC4;">&#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC138;&#xACC4;</a></li>
 <li><a href="#Nodejs-&#xC11C;&#xBC84;">Nodejs &#xC11C;&#xBC84;</a></li>
 <li><a href="#&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;">&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</a></li>
 <li><a href="#&#xBC31;&#xC5D4;&#xB4DC;&#xC640;-&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;">&#xBC31;&#xC5D4;&#xB4DC;&#xC640; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;</a></li>
-<li><a href="#HTTP-method">HTTP method</a></li>
+<li><a href="#http-method">HTTP method</a></li>
 <li><a href="#get">GET</a></li>
 <li><a href="#post">POST</a></li>
-<li><a href="#PUT">PUT</a></li>
-<li><a href="#DELETE-&#xBA54;&#xC18C;&#xB4DC;">DELETE &#xBA54;&#xC18C;&#xB4DC;</a></li>
-<li><a href="#API-&#x1F919;">API &#x1F919;</a></li>
-<li><p><a href="#RESTFULL-API">RESTFULL API</a></p>
-</li>
-<li><p><a href="#Vue-CLI">Vue CLI</a></p>
-</li>
+<li><a href="#put">PUT</a></li>
+<li><a href="#delete">DELETE &#xBA54;&#xC18C;&#xB4DC;</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#restfull-api">RESTFULL API</a></li>
 </ol>
-<h2 id="crud-&#x1F58D;&#xFE0F;">CRUD &#x1F58D;&#xFE0F;</h2>
+<h2 id="crud">CRUD</h2>
 <ul>
 <li>&#xC11C;&#xBC84;&#xB97C; &#xB9CC;&#xB4E4; &#xB54C;&#xC5D0; &#xAF2D; &#xB530;&#xB77C;&#xC57C; &#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC740; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 <li>&#xB2E4;&#xB9CC; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xC758; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xB370;&#xC774;&#xD130; &#xCC98;&#xB9AC; &#xBC29;&#xC2DD;&#xC778; CRUD&#xC5D0; &#xB530;&#xB77C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC774; &#xC77C;&#xBC18;&#xC801;&#xC785;&#xB2C8;&#xB2E4;.</li>
@@ -232,7 +229,7 @@
     res.setHeader(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;text/plain&apos;</span>);
     res.write(<span class="hljs-string">&apos;sub&apos;</span>);
     res.end();
-}<span class="hljs-keyword">else</span> {
+} <span class="hljs-keyword">else</span> {
     res.statusCode = <span class="hljs-number">200</span>;
     res.setHeader(<span class="hljs-string">&quot;Access-Control-Allow-Origin&quot;</span>, <span class="hljs-string">&quot;*&quot;</span>);
     res.setHeader(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;text/plain&apos;</span>);
@@ -262,6 +259,7 @@ http.send(params);
 <blockquote>
 <p>&#xC774;&#xAC83;&#xC774; &#xBC14;&#xB85C; &#xBC31;&#xC5D4;&#xB4DC;&#xC640; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xD1B5;&#xC2E0;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;</p>
 </blockquote>
+<p><strong><a href="#table-of-contents">&#x2B06; back to top</a></strong></p>
 <h2 id="httpmethod">HTTP_method</h2>
 <ul>
 <li>HTTP &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC740; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC758; &#xC694;&#xCCAD;&#xC744; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xB294; &#xC694;&#xCCAD; &#xBA54;&#xC18C;&#xB4DC;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xC9D1;&#xD569;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
@@ -344,7 +342,7 @@ http.send(params);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"REST API","level":"1.4","depth":1,"previous":{"title":"서버의 기초","level":"1.3","depth":1,"path":"contents/1.what-is-the-server.md","ref":"./contents/1.what-is-the-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/2.REST-API.md","mtime":"2020-06-06T10:09:24.572Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T10:09:33.355Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"REST API","level":"1.4","depth":1,"previous":{"title":"서버의 기초","level":"1.3","depth":1,"path":"contents/1.what-is-the-server.md","ref":"./contents/1.what-is-the-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/2.REST-API.md","mtime":"2020-06-06T10:15:23.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T10:15:33.416Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
