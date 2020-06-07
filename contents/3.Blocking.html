@@ -314,7 +314,7 @@ pool.getConnection(<span class="hljs-function"><span class="hljs-keyword">functi
 })
 </code></pre>
 <blockquote>
-<p>&#xC704; &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD574;&#xBCF4;&#xBA74;, &#xCFFC;&#xB9AC; &#xBB38;&#xC758; results&#xB294; &#xCF58;&#xC194;&#xB85C; &#xBD88;&#xB7EC;&#xC62C; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xC5B4;&#xCA50;&#xC77C;&#xC778;&#xC9C0;, &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC751;&#xB2F5;&#xD558;&#xB294; result&#xB294; &#xBE48; &#xAC12;&#xC73C;&#xB85C; &#xB098;&#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.<br>NodeJS&#xC758; &#xB17C;&#xBE14;&#xB85C;&#xD0B9;&#xC5D0; &#xB530;&#xB77C;, &#xB514;&#xBE44;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xAE30; &#xC804;&#xC5D0; &#xC774;&#xBBF8; &#xC751;&#xB2F5;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC6B0;&#xB9AC;&#xB294; &#xC704; &#xCF54;&#xB4DC;&#xB97C; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xBC14;&#xAFC0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC120;&#xC0DD;&#xB2D8;&#x1F468;&#x200D;&#x1F3EB;: &#xC704; &#xCF54;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD574;&#xBCF4;&#xBA74;, &#xCFFC;&#xB9AC; &#xBB38;&#xC758; results&#xB294; &#xCF58;&#xC194;&#xB85C; &#xBD88;&#xB7EC;&#xC62C; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xC5B4;&#xCA50;&#xC77C;&#xC778;&#xC9C0;, &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC751;&#xB2F5;&#xD558;&#xB294; result&#xB294; &#xBE48; &#xAC12;&#xC73C;&#xB85C; &#xB098;&#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.<br>NodeJS&#xC758; &#xB17C;&#xBE14;&#xB85C;&#xD0B9;&#xC5D0; &#xB530;&#xB77C;, &#xB514;&#xBE44;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xAE30; &#xC804;&#xC5D0; &#xC774;&#xBBF8; &#xC751;&#xB2F5;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC6B0;&#xB9AC;&#xB294; &#xC704; &#xCF54;&#xB4DC;&#xB97C; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xBC14;&#xAFC0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.getList = (connection, options) =&gt; {
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
@@ -344,22 +344,15 @@ pool.getConnection(<span class="hljs-keyword">async</span> <span class="hljs-fun
 })
 </code></pre>
 <blockquote>
-<p>&#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC2DC; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xBA74; &#xC774;&#xBC88;&#xC5D0;&#xB294; &#xBB34;&#xC0AC;&#xD788; &#xAC12;&#xB4E4;&#xC744; &#xBD88;&#xB7EC;&#xC624;&#xB294; &#xAC78; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
+<p>&#xC120;&#xC0DD;&#xB2D8;&#x1F468;&#x200D;&#x1F3EB;: &#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC2DC; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xBA74; &#xC774;&#xBC88;&#xC5D0;&#xB294; &#xBB34;&#xC0AC;&#xD788; &#xAC12;&#xB4E4;&#xC744; &#xBD88;&#xB7EC;&#xC624;&#xB294; &#xAC78; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
 <ul>
 <li>resolve : &#xACB0;&#xC815; (return)</li>
 <li>reject : &#xAC70;&#xBD80; (&#xC5D0;&#xB7EC;)</li>
 <li>async : &#xD568;&#xC218;&#xB97C; &#xBE14;&#xB85C;&#xD0B9;&#xC73C;&#xB85C; &#xC81C;&#xC5B4;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBD99;&#xC5EC;&#xC8FC;&#xB294; &#xBA85;&#xB839;&#xC5B4;</li>
 <li>await : &#xAE30;&#xB2E4;&#xB824;&#xC57C; &#xD558;&#xB294; &#xD568;&#xC218; &#xC55E;&#xC5D0; &#xCD94;&#xAC00;</li>
 </ul>
+<p>&#xC120;&#xC0DD;&#xB2D8;&#x1F468;&#x200D;&#x1F3EB;:  &#xC5EC;&#xAE30;&#xC11C; &#xD558;&#xB098; &#xC54C;&#xC544;&#xC57C;&#xD560; &#xAC83;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC6B0;&#xB9AC;&#xB294; &#xAD6C;&#xC870;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; Promise&#xB97C; &#xC0AC;&#xC6A9;&#xD55C; &#xAC83;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.<br>&#xC6B0;&#xB9AC;&#xB294; &#xAD6C;&#xC870;&#xD654;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xBE44;&#xB3D9;&#xAE30; &#xD750;&#xB984;&#xC744; &#xC81C;&#xC5B4;&#xD560; &#xD544;&#xC694;&#xB97C; &#xB290;&#xAF08;&#xACE0;, &#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; Promise&#xB97C; &#xC0AC;&#xC6A9;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xC77C;&#xC885;&#xC758; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xAF2D; Promise&#xB97C; &#xC368;&#xC57C; &#xD558;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xC810;&#xC744; &#xB9D0;&#xC500;&#xB4DC;&#xB9AC;&#xACE0; &#xC2F6;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
 </blockquote>
-<ul>
-<li>&#xC5EC;&#xAE30;&#xC11C; &#xD558;&#xB098; &#xC54C;&#xC544;&#xC57C;&#xD560; &#xAC83;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<ul>
-<li>&#xC6B0;&#xB9AC;&#xB294; &#xAD6C;&#xC870;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; Promise&#xB97C; &#xC0AC;&#xC6A9;&#xD55C; &#xAC83;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</li>
-<li>&#xC6B0;&#xB9AC;&#xB294; &#xAD6C;&#xC870;&#xD654;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xBE44;&#xB3D9;&#xAE30; &#xD750;&#xB984;&#xC744; &#xC81C;&#xC5B4;&#xD560; &#xD544;&#xC694;&#xB97C; &#xB290;&#xAF08;&#xACE0;, &#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; Promise&#xB97C; &#xC0AC;&#xC6A9;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</li>
-<li>&#xC77C;&#xC885;&#xC758; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134;&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xAF2D; Promise&#xB97C; &#xC368;&#xC57C; &#xD558;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xC810;&#xC744; &#xB9D0;&#xC500;&#xB4DC;&#xB9AC;&#xACE0; &#xC2F6;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-</ul>
-</li>
-</ul>
 <p><strong><a href="#table-of-contents">&#x2B06; back to top</a></strong></p>
 <h2 id="&#xBE44;&#xB3D9;&#xAE30;-&#xC81C;&#xC5B4;-&#xB514;&#xC790;&#xC778;-&#xD328;&#xD134;-get">&#xBE44;&#xB3D9;&#xAE30; &#xC81C;&#xC5B4; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134; GET</h2>
 <ul>
@@ -398,7 +391,7 @@ pool.getConnection(<span class="hljs-keyword">async</span> <span class="hljs-fun
 }
 </code></pre>
 <blockquote>
-<p>&#xC704; query &#xBB38; &#xC548;&#xC5D0;&#xB294; getConnection&#xACFC; query &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xB3CC;&#xB9AC;&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xBAA8;&#xB450; &#xB4E4;&#xC5B4;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xC774;&#xC81C; &#xBC18;&#xBCF5;&#xC801;&#xC73C;&#xB85C; &#xD574;&#xB2F9; &#xBB38;&#xC744; &#xB2E4;&#xC2DC; &#xC4F0;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB9AC;&#xACE0; models&#xB77C;&#xB294; &#xD3F4;&#xB354;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4; school.js&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; &#xC2E4;&#xC81C; query&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xBA85;&#xC601;&#xC5B4;&#xB294; &#xC774; model &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0;&#xC11C; &#xC791;&#xC131;&#xD560; &#xC608;&#xC815;&#xC785;&#xB2C8;&#xB2E4;.  </p>
+<p>&#xC120;&#xC0DD;&#xB2D8;&#x1F468;&#x200D;&#x1F3EB;: &#xC704; query &#xBB38; &#xC548;&#xC5D0;&#xB294; getConnection&#xACFC; query &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xB3CC;&#xB9AC;&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xBAA8;&#xB450; &#xB4E4;&#xC5B4;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC989; &#xC774;&#xC81C; &#xBC18;&#xBCF5;&#xC801;&#xC73C;&#xB85C; &#xD574;&#xB2F9; &#xBB38;&#xC744; &#xB2E4;&#xC2DC; &#xC4F0;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.<br>&#xADF8;&#xB9AC;&#xACE0; models&#xB77C;&#xB294; &#xD3F4;&#xB354;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4; school.js&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC774;&#xC81C; &#xC2E4;&#xC81C; query&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xBA85;&#xC601;&#xC5B4;&#xB294; &#xC774; model &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0;&#xC11C; &#xC791;&#xC131;&#xD560; &#xC608;&#xC815;&#xC785;&#xB2C8;&#xB2E4;.  </p>
 </blockquote>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> db = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../components/db&apos;</span>)
 
@@ -411,7 +404,7 @@ pool.getConnection(<span class="hljs-keyword">async</span> <span class="hljs-fun
 };
 </code></pre>
 <blockquote>
-<p>&#xC704;&#xC640; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD558;&#xBA74; &#xC774;&#xC81C; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; query&#xB97C; &#xAD00;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;!<br>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; routes&#xC758; school.js &#xC758; get &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xBC14;&#xAFD4;&#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC120;&#xC0DD;&#xB2D8;&#x1F468;&#x200D;&#x1F3EB;: &#xC704;&#xC640; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD558;&#xBA74; &#xC774;&#xC81C; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; query&#xB97C; &#xAD00;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;!<br>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; routes&#xC758; school.js &#xC758; get &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xBC14;&#xAFD4;&#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <pre><code class="lang-js">router.get(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
   <span class="hljs-keyword">const</span> schoolName = req.query.schoolName
@@ -440,7 +433,7 @@ pool.getConnection(<span class="hljs-keyword">async</span> <span class="hljs-fun
 }
 </code></pre>
 <blockquote>
-<p>&#xB610;&#xD55C; commit&#xACFC; rollback&#xB3C4; &#xAD6C;&#xD604; &#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC120;&#xC0DD;&#xB2D8;&#x1F468;&#x200D;&#x1F3EB;: &#xB610;&#xD55C; commit&#xACFC; rollback&#xB3C4; &#xAD6C;&#xD604; &#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports.commit = connection =&gt; {
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
@@ -608,7 +601,7 @@ router.delete(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Blocking","level":"1.3","depth":1,"previous":{"title":"REST API","level":"1.2","depth":1,"path":"contents/2.REST-API.md","ref":"./contents/2.REST-API.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/3.Blocking.md","mtime":"2020-06-06T12:43:51.632Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-07T11:08:05.231Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Blocking","level":"1.3","depth":1,"previous":{"title":"REST API","level":"1.2","depth":1,"path":"contents/2.REST-API.md","ref":"./contents/2.REST-API.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://imseongtae.github.io"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-158669989-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"contents/3.Blocking.md","mtime":"2020-06-07T11:10:47.622Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-07T11:11:01.665Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
